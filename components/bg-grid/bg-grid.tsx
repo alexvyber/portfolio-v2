@@ -3,20 +3,21 @@
 import { useWindowSize } from "@/hooks/use-window-size"
 import { useEffect, useRef, useState } from "react"
 
-const spacingBig = 36
-const spacingSmall = 12
+const spacingBig = 48
+const spacingSmall = 16
 
 export function BgGrid() {
   const [width, height] = useWindowSize()
 
-  const h = height - height * 0.1
-  const w = width - width * 0.05
+  const h = height - height * 0.08
+  const w = width - width * 0.04
 
   return (
     <svg
       width={w}
       height={h}
       viewBox={`0 0 ${w + 1} ${h + 1}`}
+      className="absolute -z-10 shadow-2xl shadow-white/5 rounded-3xl"
     >
       <rect
         className="stroke-neutral-800 fill-neutral-900"
@@ -123,36 +124,34 @@ export function BgGrid() {
         </linearGradient>
       </defs>
       <MovingLine />
-      
-      
     </svg>
   )
 }
 
+function MovingLine() {
+  const intervalId = useRef<any>(null)
+  const [count, setCount] = useState(0)
 
-function MovingLine(){
-    const intervalId = useRef<any>(null);
-    const [count, setCount] = useState(0);
-  
-    useEffect(() => {
-      intervalId.current = setInterval(() => {
-        if (count < 1200) {
-          setCount((count) => count + 7);
-        } else {
-          clearInterval(intervalId.current);
-        }
-      }, 30);
-      return () => {
-        clearInterval(intervalId.current);
+  useEffect(() => {
+    intervalId.current = setInterval(() => {
+      if (count < 1200) {
+        setCount((count) => count + 7)
+      } else {
+        clearInterval(intervalId.current)
       }
-    }, [count]); 
+    }, 30)
+    return () => {
+      clearInterval(intervalId.current)
+    }
+  }, [count])
 
-    return <rect
-    x="36"
-    y={count}
-
-    width="1"
-    height="100"
-    fill="url(#Gradient2)"
-  />
+  return (
+    <rect
+      x="36"
+      y={count}
+      width="1"
+      height="100"
+      fill="url(#Gradient2)"
+    />
+  )
 }
