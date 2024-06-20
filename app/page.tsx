@@ -1,9 +1,10 @@
-import Image from "next/image"
+import { BgGrid } from "@/components/bg-grid/bg-grid"
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      Alex Vyber Portfolio v2.0
+    <div className="w-screen h-screen flex flex-col justify-center items-center gap-4">
+      <div className="text-sm font-extralight">Alex Vyber Portfolio v2.0</div>
+      <BgGrid />
     </div>
   )
 }
