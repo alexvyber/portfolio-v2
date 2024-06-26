@@ -9,7 +9,7 @@ const spacingSmall = 16
 export function BgGrid() {
   const [width, height] = useWindowSize()
 
-  const h = height - height * 0.08
+  const h = height - height * 0.1
   const w = width - width * 0.04
 
   return (
@@ -17,10 +17,10 @@ export function BgGrid() {
       width={w}
       height={h}
       viewBox={`0 0 ${w + 1} ${h + 1}`}
-      className="absolute -z-10 shadow-2xl shadow-white/5 rounded-3xl"
+      className="absolute rounded-3xl dark:shadow-2xl -z-10 dark:shadow-white/5 backdrop-blur-sm shadow-xl shadow-neutral-100"
     >
       <rect
-        className="stroke-neutral-800 fill-neutral-900"
+        className="dark:stroke-neutral-800 stroke-neutral-200 dark:fill-neutral-900 fill-neutral-100/70"
         width={w}
         height={h}
         rx="24"
@@ -28,7 +28,7 @@ export function BgGrid() {
       />
 
       <rect
-        className="stroke-neutral-800 fill-neutral-950"
+        className="dark:stroke-neutral-800 stroke-neutral-200 dark:fill-neutral-950 fill-[#fefefe]/70"
         width={w - 24}
         height={h - 24}
         x="12"
@@ -44,7 +44,7 @@ export function BgGrid() {
           x2={(i + 1) * spacingSmall}
           y1={0 + 12}
           y2={h - 12}
-          className="stroke-neutral-900"
+          className="dark:stroke-neutral-900 stroke-[#f9f9f9]"
           width={2}
         />
       ))}
@@ -56,7 +56,7 @@ export function BgGrid() {
           y2={(i + 1) * spacingSmall}
           x1={0 + 12}
           x2={w - 12}
-          className="stroke-neutral-900"
+          className="dark:stroke-neutral-900 stroke-[#f9f9f9]"
           width={2}
         />
       ))}
@@ -68,7 +68,7 @@ export function BgGrid() {
           x2={(i + 1) * spacingBig}
           y1={0 + 12}
           y2={h - 12}
-          className="stroke-neutral-800"
+          className="dark:stroke-neutral-800 stroke-[#f1f1f1]"
           width={2}
         />
       ))}
@@ -80,7 +80,7 @@ export function BgGrid() {
           y2={(i + 1) * spacingBig}
           x1={0 + 12}
           x2={w - 12}
-          className="stroke-neutral-800"
+          className="dark:stroke-neutral-800 stroke-[#f1f1f1]"
           width={2}
         />
       ))}

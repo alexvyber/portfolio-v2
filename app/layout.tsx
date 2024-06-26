@@ -27,8 +27,8 @@ export default function RootLayout({
       <body
         className={cx(
           `${geistSans.variable} ${geistMono.variable}`,
-          "bg-[#060606] text-neutral-400 font-light font-mono",
-          "bg-gradient-to-r from-neutral-900 from-10% via-neutral-950 via-30% to-neutral-900 to-90%"
+          "dark:bg-[#060606] dark:text-neutral-400 font-light font-mono",
+          "bg-gradient-to-r dark:from-neutral-900 dark:from-10% dark:via-neutral-950 via-30% dark:to-neutral-900 to-90%"
         )}
       >
         {children}

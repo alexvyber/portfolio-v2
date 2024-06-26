@@ -12,11 +12,11 @@
     "lineWidth": 120,
     "indentStyle": "space",
     "indentWidth": 2,
-    "ignore": ["dist", "build", "node_modules"],
+    "ignore": ["dist", "build", "node_modules", ".next"],
     "attributePosition": "multiline"
   },
   "linter": {
-    "ignore": ["dist", "build", "node_modules"],
+    "ignore": ["dist", "build", "node_modules", ".next"],
     "enabled": true,
     "rules": {
       "recommended": true,
