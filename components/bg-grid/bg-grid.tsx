@@ -44,7 +44,7 @@ export function BgGrid() {
           x2={(i + 1) * spacingSmall}
           y1={0 + 12}
           y2={h - 12}
-          className="dark:stroke-neutral-900 stroke-[#f9f9f9]"
+          className="dark:stroke-neutral-900 stroke-[#f6f6f6]"
           width={2}
         />
       ))}
@@ -56,7 +56,7 @@ export function BgGrid() {
           y2={(i + 1) * spacingSmall}
           x1={0 + 12}
           x2={w - 12}
-          className="dark:stroke-neutral-900 stroke-[#f9f9f9]"
+          className="dark:stroke-neutral-900 stroke-[#f6f6f6]"
           width={2}
         />
       ))}
@@ -123,7 +123,7 @@ export function BgGrid() {
           />
         </linearGradient>
       </defs>
-      <MovingLine />
+      {/* <MovingLine /> */}
     </svg>
   )
 }
